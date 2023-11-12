@@ -48,7 +48,7 @@ jobs:
           kustomize: latest
 
       - name: Kustomize and push
-        id: Kustomize
+        id: kustomize
         working-directory: ./deployment
         run: |
           kustomize edit set image $ACR_REPOSITORY:$VERSION
