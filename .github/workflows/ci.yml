@@ -42,6 +42,11 @@ jobs:
           echo `which docker`
           docker push $ACR_REPOSITORY:$VERSION
 
+      - uses: alexellis/setup-arkade@v1
+      - uses: alexellis/arkade-get@master
+        with:
+          kustomize: latest
+
       - name: Kustomize and push
         id: Kustomize
         working-directory: ./deployment
