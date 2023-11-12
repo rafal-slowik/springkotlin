@@ -10,7 +10,7 @@ class UserService {
 
     private val log = LoggerFactory.getLogger(this.javaClass)
     fun get(userId: UUID): UserDto {
-        log.info("User ID {} will be returned", userId)
+        log.info("User ID {} will be returned.", userId)
         return UserDto("Jimmy", "Lenny", UUID.randomUUID().toString())
     }
 }
