@@ -21,27 +21,27 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
-
-      - name: Build with Gradle Wrapper
-        id: build-image-with-gradle
-        run: |
-          echo "Image: $ACR_REPOSITORY:$VERSION"
-          ./gradlew bootBuildImage --imageName="$ACR_REPOSITORY:$VERSION"
+#
+#      - name: Build with Gradle Wrapper
+#        id: build-image-with-gradle
+#        run: |
+#          echo "Image: $ACR_REPOSITORY:$VERSION"
+#          ./gradlew bootBuildImage --imageName="$ACR_REPOSITORY:$VERSION"
 
       - name: Login to ACR
         uses: docker/login-action@v3
         id: login-to-acr
         with:
-          registry: ${{ ACR_REGISTRY_NAME }}
+          registry: rsecrregistry.azurecr.io
           username: ${{ secrets.ACR_REGISTRY_USER }}
           password: ${{ secrets.ACR_REGISTRY_PASSWORD }}
 
-      - name: Push image to ACR registry
-        id: push-image
-        run: |
-          echo "dupa"
-          echo `which docker`
-          # docker push $ACR_REPOSITORY:$VERSION
+#      - name: Push image to ACR registry
+#        id: push-image
+#        run: |
+#          echo "dupa"
+#          echo `which docker`
+#          # docker push $ACR_REPOSITORY:$VERSION
 
 #       - name: Kustomize and push
 #         id: Kustomize
