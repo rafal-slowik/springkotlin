@@ -38,7 +38,9 @@ jobs:
       - name: Push image to ACR registry
         id: push-image
         run: |
-          docker push $ECR_REPOSITORY:$VERSION
+          echo "dupa"
+          echo `which docker`
+          # docker push $ECR_REPOSITORY:$VERSION
 
       - name: Kustomize and push
         id: Kustomize
