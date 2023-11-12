@@ -54,5 +54,6 @@ jobs:
           kustomize edit set image $ACR_REPOSITORY:$VERSION
           git add .
           git config user.name "Github Action"
+          git config user.email "github-actions@devops-mb.com"
           git commit -m "Set dev image tag to short sha"
           git push
