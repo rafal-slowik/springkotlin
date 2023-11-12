@@ -42,13 +42,13 @@ jobs:
           echo `which docker`
           # docker push $ECR_REPOSITORY:$VERSION
 
-      - name: Kustomize and push
-        id: Kustomize
-        working-directory: ./deployment
-        run: |
-          kustomize edit set image $ECR_REPOSITORY:$VERSION
-          git add .
-#          git config user.email "$EMAIL"
-          git config user.name "Github Action"
-          git commit -m "Set dev image tag to short sha"
-          git push
+#       - name: Kustomize and push
+#         id: Kustomize
+#         working-directory: ./deployment
+#         run: |
+#           kustomize edit set image $ECR_REPOSITORY:$VERSION
+#           git add .
+# #          git config user.email "$EMAIL"
+#           git config user.name "Github Action"
+#           git commit -m "Set dev image tag to short sha"
+#           git push
