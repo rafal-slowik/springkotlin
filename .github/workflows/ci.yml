@@ -46,7 +46,7 @@ jobs:
         id: Kustomize
         working-directory: ./deployment
         run: |
-          kustomize edit set image $ECR_REPOSITORY:$VERSION
+          kustomize edit set image $ACR_REPOSITORY:$VERSION
           git add .
  #          git config user.email "$EMAIL"
           git config user.name "Github Action"
