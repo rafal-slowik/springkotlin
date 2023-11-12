@@ -3,10 +3,10 @@ kind: Kustomization
 namespace: springkotlin-dev
 nameSuffix: -dev
 resources:
-  - deployment.yaml
+- deployment.yaml
 replicas:
-  - count: 1
-    name: springbootflux-deployment
+- count: 1
+  name: springbootflux-deployment
 images:
-  - name: rsecrregistry.azurecr.io/springkotlin
-    newTag: 77d9a1939051823cbd41a9a1033599d525517240
+- name: rsecrregistry.azurecr.io/springkotlin
+  newTag: eeb0d470792ba123e73261051a66bbc6b6e30533
