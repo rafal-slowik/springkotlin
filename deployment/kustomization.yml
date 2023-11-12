@@ -9,4 +9,4 @@ replicas:
   name: springbootflux-deployment
 images:
 - name: rsecrregistry.azurecr.io/springkotlin
-  newTag: 6db99b45f23754585ffb2f64aa5a17c96e604c7e
+  newTag: 9db09c2ce7b7cc466ea5e3a0022372c8e4b91219
