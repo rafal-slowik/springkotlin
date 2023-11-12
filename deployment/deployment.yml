@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-kotlin
+  name: spring-kotlin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-kotlin
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: spring-kotlin
+    spec:
+      containers:
+        - image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
+          name: springkotlin
+          resources: {}
+status: {}

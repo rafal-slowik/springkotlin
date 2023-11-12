@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: springkotlin-dev
+nameSuffix: -dev
+resources:
+  - deployment.yaml
+replicas:
+  - count: 1
+    name: springbootflux-deployment
+images:
+  - name: rsecrregistry.azurecr.io/springkotlin
+    newTag: 77d9a1939051823cbd41a9a1033599d525517240
