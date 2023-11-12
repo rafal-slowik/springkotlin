@@ -25,6 +25,7 @@ jobs:
       - name: Build with Gradle Wrapper
         id: build-image-with-gradle
         run: |
+          echo "Image: $ECR_REPOSITORY:$VERSION"
           ./gradlew bootBuildImage --imageName="$ECR_REPOSITORY:$VERSION"
 
       - name: Login to ACR
