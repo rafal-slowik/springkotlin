@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: app-dev
 nameSuffix: -dev
 resources:
-- deployment.yaml
+- deployment.yml
 replicas:
 - count: 1
   name: springbootflux-deployment
