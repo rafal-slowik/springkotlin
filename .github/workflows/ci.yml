@@ -9,7 +9,7 @@ on:
 env:
   VERSION: ${{ github.sha }}
   ACR_REGISTRY: rsecrregistry.azurecr.io
-  ACR_REPOSITORY: $ACR_REGISTRY/springkotlin
+  ACR_REPOSITORY: rsecrregistry.azurecr.io/springkotlin
 jobs:
   build:
     name: Deploy
