@@ -11,20 +11,20 @@ spec:
       app: spring-kotlin
   template:
     volumes:
-      - name: secrets-az-vault
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: azure-kvname-system-msi
+    - name: secrets-az-vault
+      csi:
+        driver: secrets-store.csi.k8s.io
+        volumeAttributes:
+          secretProviderClass: azure-kvname-system-msi
     metadata:
       labels:
         app: spring-kotlin
     spec:
       containers:
-        - image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
-          name: springkotlin
-          mountVolumes:
-          - name: secrets-az-vault
-            volumeMount: /mnt/secrets-store
+      - image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
+        name: springkotlin
+        mountVolumes:
+        - name: secrets-az-vault
+          volumeMount: /mnt/secrets-store
+          readOnly: true
 status: {}
