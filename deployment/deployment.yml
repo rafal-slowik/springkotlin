@@ -9,7 +9,6 @@ spec:
   selector:
     matchLabels:
       app: spring-kotlin
-  strategy: {}
   template:
     metadata:
       labels:
@@ -18,5 +17,4 @@ spec:
       containers:
         - image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
           name: springkotlin
-          resources: {}
 status: {}
