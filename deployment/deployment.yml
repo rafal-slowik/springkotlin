@@ -15,7 +15,7 @@ spec:
       csi:
         driver: secrets-store.csi.k8s.io
         volumeAttributes:
-          secretProviderClass: azure-kvname-system-msi
+          secretProviderClass: azure-kvname-system-msi-dev
     metadata:
       labels:
         app: spring-kotlin

@@ -4,6 +4,7 @@ namespace: app-dev
 nameSuffix: -dev
 resources:
 - deployment.yml
+- csi-secret.yml
 commonLabels:
   app: spring-kotlin
 replicas:
