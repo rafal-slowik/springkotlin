@@ -4,6 +4,8 @@ namespace: app-dev
 nameSuffix: -dev
 resources:
 - deployment.yml
+commonLabels:
+  app: spring-kotlin
 replicas:
 - count: 1
   name: springkotlin-deployment
