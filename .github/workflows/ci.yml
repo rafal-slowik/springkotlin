@@ -51,7 +51,7 @@ jobs:
         id: kustomize
         working-directory: ./deployment
         run: |
-          export $TAG=$ACR_REPOSITORY:$VERSION
+          export TAG=$ACR_REPOSITORY:$VERSION
           kustomize edit set image "springkotlin=springkotlin:$TAG"
           git add .
           git config user.name "Github Action"
