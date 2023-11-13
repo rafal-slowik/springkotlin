@@ -51,7 +51,7 @@ jobs:
         id: kustomize
         working-directory: ./deployment
         run: |
-          kustomize edit set image springkotlin:$ACR_REPOSITORY:$VERSION
+          kustomize edit set image springkotlin=$ACR_REPOSITORY:$VERSION
           git add .
           git config user.name "Github Action"
           git config user.email "github-actions@devops-mb.com"
