@@ -15,11 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v1
-        with:
-          java-version: 17
-
       - name: Generate build ID
         id: prep
         run: |
@@ -28,11 +23,16 @@ jobs:
           ts=$(date +%s)
           echo "BUILD_ID=${branch}${sha}${ts}" >> "$GITHUB_OUTPUT"
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Build with Gradle Wrapper
         id: build-image-with-gradle
         run: |
-          echo "Image: $ACR_REPOSITORY:$VERSION"
-          ./gradlew bootBuildImage --imageName="$ACR_REPOSITORY:$VERSION"
+          ./gradlew bootBuildImage --imageName="$ACR_REPOSITORY:${{ steps.prep.outputs.BUILD_ID }}"
 
       - name: Login to ACR
         uses: docker/login-action@v3
@@ -45,8 +45,7 @@ jobs:
       - name: Push image to ACR registry
         id: push-image
         run: |
-          echo `which docker`
-          docker push $ACR_REPOSITORY:$VERSION
+          docker push $ACR_REPOSITORY:${{ steps.prep.outputs.BUILD_ID }}
 
 #      - uses: alexellis/setup-arkade@v1
 #      - uses: alexellis/arkade-get@master
