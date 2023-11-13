@@ -27,8 +27,9 @@ spec:
         env:
         - name: MY_PASS
           valueFrom:
-            configMapKeyRef:
-              key: /mnt/secrets-store/dev-cms-pass
+            secretKeyRef:
+              name: dev-cms-secret
+              key: dev-cms-pass
         volumeMounts:
         - name: secrets-az-vault
           mountPath: /mnt/secrets-store
