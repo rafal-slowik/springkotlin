@@ -7,7 +7,7 @@ resources:
 commonLabels:
   app: spring-kotlin
 replicas:
-- count: 2
+- count: 1
   name: spring-kotlin
 images:
 - name: rsecrregistry.azurecr.io/springkotlin
