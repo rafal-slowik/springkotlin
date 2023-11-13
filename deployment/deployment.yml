@@ -26,6 +26,6 @@ spec:
         name: springkotlin
         volumeMounts:
         - name: secrets-az-vault
-          volumeMount: "/mnt/secrets-store"
+          mountPath: /mnt/secrets-store
           readOnly: true
 status: {}
