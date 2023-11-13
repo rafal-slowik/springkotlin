@@ -10,7 +10,5 @@ replicas:
 - count: 1
   name: spring-kotlin
 images:
-- name: rsecrregistry.azurecr.io/springkotlin
-  newTag: 5d46efaf1f9605e7c13e91422e2dfebb1110f9d1
 - name: springkotlin
   newTag: 98bdba0a19ab9a0b2b007065730f019b013c4989

@@ -15,6 +15,6 @@ spec:
         app: spring-kotlin
     spec:
       containers:
-      - image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
-        name: springkotlin
+      - name: springkotlin
+        image: rsecrregistry.azurecr.io/springkotlin:0.1.0-SNAPSHOT
 status: {}
