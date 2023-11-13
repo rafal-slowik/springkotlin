@@ -7,9 +7,9 @@ resources:
 commonLabels:
   app: spring-kotlin
 replicas:
-- count: 1
+- count: 2
   name: spring-kotlin
 images:
-- name: springkotlin
-  newName: springkotlin
-  newTag: aca709883e5912e32eeef09609d5c4c9a9bfc656
+- name: rsecrregistry.azurecr.io/springkotlin
+  newName: rsecrregistry.azurecr.io/springkotlin
+  newTag: 7a3534a87fdb4b7b75819c00ab723d5fbb2ad9e9
