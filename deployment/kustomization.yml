@@ -12,4 +12,4 @@ replicas:
 images:
 - name: springkotlin
   newName: rsecrregistry.azurecr.io/springkotlin
-  newTag: 0c1d7a90cd60dfea37ac2da88cfaa95766bdefc8
+  newTag: 7ffa01b61bc9d1d4536d8bc92771b9a7e736eec6
