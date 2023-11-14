@@ -23,7 +23,7 @@ class UserController constructor(val userService: UserService) {
 
     @GetMapping("/{id}")
     fun get(@Validated @PathVariable("id") userId: UUID): ResponseEntity<UserDto> {
-        log.info("Get user request in progress ... test")
+        log.info("Get user request in progress ... blabla")
         return ResponseEntity.ok(userService.get(userId))
     }
 }
